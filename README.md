@@ -2,7 +2,7 @@ A wrapper for the TCPDF class that makes it easier to use it for building PDF
 tables.
 
 ## Requirements
-TCPDF must already be loaded.
+TCPDF must already be loaded or autoloaded.
 
 
 ## Install

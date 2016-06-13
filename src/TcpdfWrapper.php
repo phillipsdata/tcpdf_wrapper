@@ -1,5 +1,5 @@
 <?php
-namespace phillipsdata\TcpdfWrapper;
+namespace PhillipsData\TcpdfWrapper;
 
 /**
  * TCPDF Wrapper. Extends the TCPDF library to make it easier to use for
