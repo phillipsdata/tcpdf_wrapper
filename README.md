@@ -16,6 +16,8 @@ composer require phillipsdata/tcpdf_wrapper
 ### Draw a table
 
 ```php
+use PhillipsData\TcpdfWrapper\TcpdfWrapper;
+
 // Instantiate an instance of the TcpdfWrapper
 $oprientation = 'P';
 $unit = 'mm';
