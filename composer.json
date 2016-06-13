@@ -1,0 +1,21 @@
+{
+    "name": "phillipsdata/tcpdfwrapper",
+    "description": "TCPDF Table Library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tyson Phillips",
+            "email": "tyson@phillipsdata.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"PhillipsData\\TcpdfWrapper\\": "src"}
+    },
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "~2.2"
+    }
+}
