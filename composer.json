@@ -1,5 +1,5 @@
 {
-    "name": "phillipsdata/tcpdfwrapper",
+    "name": "phillipsdata/tcpdf_wrapper",
     "description": "TCPDF Table Library",
     "type": "library",
     "license": "MIT",
