@@ -1,6 +1,8 @@
 <?php
 namespace PhillipsData\TcpdfWrapper;
 
+use TCPDF;
+
 /**
  * TCPDF Wrapper. Extends the TCPDF library to make it easier to use for
  * building PDFs.
@@ -15,24 +17,24 @@ class TcpdfWrapper extends TCPDF
      *
      * @param array $data An array of 'column' => values
      * @param array $options An array of options affecting the table including:
-     *     -type The type of table (multicell or cell, default 'multicell')
-     *     -x_pos The X position of the table (default current X post)
-     *     -y_pos The Y position of the table (default current Y pos)
-     *     -border Border thickness (default 0)
-     *     -align Table alignment (default L)
-     *     -text_color An RGB array of text color (default null, whatever the default text color is set to)
-     *     -font_size The font size for the table (default current font size)
-     *     -height The width of the cell(s) (default 0 - auto)
-     *     -width The height of the cell(s) (default 0 - to end of screen)
-     *     -font The font to set for the cell(s)
-     *     -line_style The line style attributes (@see TCPDF::setLineStyle())
-     *     -fill_color The color to fill the cell(s) with
-     *     -padding The padding value to use for the cell(s) (null - auto padding)
-     *     -col All options from $options that affect the given column by name or index
-     *     -row All options from $options that affect the given row by index
-     *     -cell All options from $options that affect the given cell by both column and row
+     *  - type The type of table (multicell or cell, default 'multicell')
+     *  - x_pos The X position of the table (default current X post)
+     *  - y_pos The Y position of the table (default current Y pos)
+     *  - border Border thickness (default 0)
+     *  - align Table alignment (default L)
+     *  - text_color An RGB array of text color (default null, whatever the default text color is set to)
+     *  - font_size The font size for the table (default current font size)
+     *  - height The width of the cell(s) (default 0 - auto)
+     *  - width The height of the cell(s) (default 0 - to end of screen)
+     *  - font The font to set for the cell(s)
+     *  - line_style The line style attributes (@see TCPDF::setLineStyle())
+     *  - fill_color The color to fill the cell(s) with
+     *  - padding The padding value to use for the cell(s) (null - auto padding)
+     *  - col All options from $options that affect the given column by name or index
+     *  - row All options from $options that affect the given row by index
+     *  - cell All options from $options that affect the given cell by both column and row
      */
-    protected function drawTable(array $data = array(), $options = null)
+    public function drawTable(array $data = array(), $options = null)
     {
         $opt = array(
             'type' => 'multicell', // Accepted types: multicell, cell
