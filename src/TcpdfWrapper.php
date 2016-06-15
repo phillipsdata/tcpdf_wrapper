@@ -30,7 +30,9 @@ class TcpdfWrapper extends TCPDF
      *  - line_style The line style attributes (@see TCPDF::setLineStyle())
      *  - fill_color The color to fill the cell(s) with
      *  - padding The padding value to use for the cell(s) (null - auto padding)
-     *  - is_html True or false, whether the table contains HTML
+     *  - reseth True or false, whether to resets the height (default true)
+     *  - stretch [0..4] The stretch character mode (default 0)
+     *  - is_html True or false, whether the table contains HTML (default false)
      *  - col All options from $options that affect the given column by name or index
      *  - row All options from $options that affect the given row by index
      *  - cell All options from $options that affect the given cell by both column and row
@@ -47,6 +49,8 @@ class TcpdfWrapper extends TCPDF
             'height' => 0,
             'text_color' => null,
             'font_size' => $this->getFontSize(),
+            'reseth' => true,
+            'stretch' => 0,
             'is_html' => false
         );
 
@@ -196,8 +200,8 @@ class TcpdfWrapper extends TCPDF
                             1,
                             $this->GetX(),
                             $y_start,
-                            true,
-                            0,
+                            (array_key_exists('reseth', $cell_options) ? (bool)$cell_options['reseth'] : true),
+                            (array_key_exists('stretch', $cell_options) ? (bool)$cell_options['stretch'] : 0),
                             (array_key_exists('is_html', $cell_options) ? (bool)$cell_options['is_html'] : false)
                         );
                     } else {
@@ -211,8 +215,8 @@ class TcpdfWrapper extends TCPDF
                             2,
                             $this->GetX(),
                             $y_start,
-                            true,
-                            0,
+                            (array_key_exists('reseth', $cell_options) ? (bool)$cell_options['reseth'] : true),
+                            (array_key_exists('stretch', $cell_options) ? (bool)$cell_options['stretch'] : 0),
                             (array_key_exists('is_html', $cell_options) ? (bool)$cell_options['is_html'] : false)
                         );
                     }
