@@ -201,7 +201,7 @@ class TcpdfWrapper extends TCPDF
                             $this->GetX(),
                             $y_start,
                             (array_key_exists('reseth', $cell_options) ? (bool)$cell_options['reseth'] : true),
-                            (array_key_exists('stretch', $cell_options) ? (bool)$cell_options['stretch'] : 0),
+                            (array_key_exists('stretch', $cell_options) ? $cell_options['stretch'] : 0),
                             (array_key_exists('is_html', $cell_options) ? (bool)$cell_options['is_html'] : false)
                         );
                     } else {
@@ -216,7 +216,7 @@ class TcpdfWrapper extends TCPDF
                             $this->GetX(),
                             $y_start,
                             (array_key_exists('reseth', $cell_options) ? (bool)$cell_options['reseth'] : true),
-                            (array_key_exists('stretch', $cell_options) ? (bool)$cell_options['stretch'] : 0),
+                            (array_key_exists('stretch', $cell_options) ? $cell_options['stretch'] : 0),
                             (array_key_exists('is_html', $cell_options) ? (bool)$cell_options['is_html'] : false)
                         );
                     }
